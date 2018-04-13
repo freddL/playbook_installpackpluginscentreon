@@ -1,0 +1,18 @@
+- hosts: centreon-poller
+  environment:
+    http_proxy: http://PROXY:PORT
+    https_proxy: http://PROXY:PORT
+
+  tasks:
+    - name: install git
+      package:
+        name: git
+        state: present
+
+    - git:
+        repo: 'https://github.com/centreon/centreon-plugins.git'
+        dest: /usr/lib/nagios/plugins/centreon-plugins
+        force: yes
+    
+    - name: chmod +x centreon_plugins.pl
+      file: dest=/usr/lib/nagios/plugins/centreon-plugins/centreon_plugins.pl mode=a+x
