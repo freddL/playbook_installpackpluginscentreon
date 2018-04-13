@@ -1,2 +1,2 @@
-# playbook_installpackpluginscentreon
-playbook pour installer un pack de plugins centreon sur des pollers
+playbook pour installer un pack de plugins nagios/centreon sur des pollers distants
+https://github.com/centreon/centreon-plugins
